@@ -1,0 +1,180 @@
+/* css/policy.css */
+
+/* ========================================== */
+/* BILINGUAL TYPOGRAPHY SYSTEM (REFINED)      */
+/* ========================================== */
+
+.font-cinzel { font-family: 'NP Chinese New Year', 'Sriracha', cursive !important; }
+.font-serif-thai { font-family: 'NP Chinese New Year', 'Sriracha', cursive !important; }
+.font-prompt { font-family: 'NP Chinese New Year', 'Sriracha', cursive !important; }
+.font-cn { font-family: 'NP Chinese New Year', 'Sriracha', cursive !important; }
+
+/* 1. Global Base Fonts */
+body.policy-page {
+    background-color: #020202;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'NP Chinese New Year', 'Sriracha', cursive;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a, div, li, th, td, 
+.policy-hero h1, .luxury-title,
+.policy-content, .literary-content, blockquote,
+nav, .nav-item, .nav-text,
+input, button, select, textarea, label,
+.price, .date, .rating, .badge, .meta-info,
+.btn, .booking-card, .footer-rights,
+.chatbot-fab, .chatbot-window, .chinese-watermark {
+    font-family: 'NP Chinese New Year', 'Sriracha', cursive !important;
+}
+
+/* 3D Perspective Container */
+.policy-container {
+    perspective: 1500px;
+    padding: 50px 20px 150px;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+/* Glassmorphism Cards */
+.policy-card {
+    background: rgba(15, 15, 15, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 50px;
+    margin-bottom: 80px;
+    position: relative;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+    transform-style: preserve-3d;
+    will-change: transform, opacity;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.policy-card:hover {
+    border-color: rgba(217, 119, 6, 0.4);
+    box-shadow: 0 30px 60px rgba(217, 119, 6, 0.15);
+}
+
+/* Internal Card Elements */
+.policy-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 25px;
+    transform: translateZ(20px); /* 3D layer */
+}
+
+.policy-icon {
+    font-size: 3.5rem;
+    filter: drop-shadow(0 0 15px rgba(217, 119, 6, 0.5));
+}
+
+.policy-title-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.policy-title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #fbbf24; /* Amber 400 */
+    text-shadow: 0 0 10px rgba(217, 119, 6, 0.3);
+    margin: 0;
+}
+
+.policy-title-en {
+    font-size: 0.85rem;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 8px;
+}
+
+.policy-content {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: #d1d5db;
+    white-space: pre-line;
+    transform: translateZ(10px); /* 3D layer */
+}
+
+/* Ambient Lighting Background */
+.ambient-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at 50% 20%, rgba(217, 119, 6, 0.12), transparent 60%);
+}
+
+.gold-grain {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image: url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+    mix-blend-mode: overlay;
+}
+
+/* Hero Section */
+.policy-hero {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    padding-top: 80px;
+}
+
+.policy-hero h1 {
+    font-size: 4.5rem;
+    letter-spacing: 6px;
+    color: #ffffff;
+    text-shadow: 0 0 25px rgba(217, 119, 6, 0.6);
+    margin: 0 0 15px 0;
+}
+
+.policy-hero p {
+    color: #9ca3af;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .policy-hero {
+        height: 40vh;
+    }
+    .policy-hero h1 {
+        font-size: 2.5rem;
+        letter-spacing: 3px;
+    }
+    .policy-title {
+        font-size: 1.4rem;
+    }
+    .policy-card {
+        padding: 30px 20px;
+    }
+    .policy-icon {
+        font-size: 2.5rem;
+    }
+}
+
+/* Ambient Fog Layer */
+.fog-container { position: absolute; inset: 0; overflow: hidden; z-index: 2; pointer-events: none; mix-blend-mode: screen; }
+.fog-layer-1 { position: absolute; height: 100%; width: 300%; opacity: 0.5; background: url('https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog1.png') repeat-x; background-size: 50% 100%; animation: fogMove 55s linear infinite; }
+.fog-layer-2 { position: absolute; height: 100%; width: 300%; opacity: 0.4; background: url('https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog2.png') repeat-x; background-size: 50% 100%; animation: fogMove 35s linear infinite reverse; }
+@keyframes fogMove { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-100vw, 0, 0); } }

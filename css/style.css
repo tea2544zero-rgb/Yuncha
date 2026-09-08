@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+@font-face {
+    font-family: 'NP Chinese New Year';
+    src: url('../fonts/NP-Chinese-New-Year.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body { background-color: #020202; color: #ffffff; overflow-x: hidden; }
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    background-image: url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.035"/%3E%3C/svg%3E');
+    mix-blend-mode: overlay;
+}
+@media (any-pointer: fine) {
+    body, * { cursor: none !important; }
+}
+@media not all and (any-pointer: fine) {
+    .cursor-dot, .cursor-ring { display: none !important; }
+}
+
+::-webkit-scrollbar { display: none; }
+
+.font-cinzel { font-family: 'NP Chinese New Year', 'Sriracha', cursive !important; }
+.font-serif-thai { font-family: 'NP Chinese New Year', 'Sriracha', cursive !important; } 
+.font-prompt { font-family: 'NP Chinese New Year', 'Sriracha', cursive !important; }
+.font-cn { font-family: 'NP Chinese New Year', 'Sriracha', cursive !important; }
+
+/* ========================================== */
+/* BILINGUAL TYPOGRAPHY SYSTEM (REFINED)      */
+/* ========================================== */
+
+/* 1. Global Base Fonts */
+body {
+    font-family: 'NP Chinese New Year', 'Sriracha', cursive;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a, div, li, th, td, 
+.luxury-title, .literary-content, blockquote,
+nav, .nav-item, .nav-text,
+input, button, select, textarea, label,
+.price, .date, .rating, .badge, .meta-info,
+.btn, .booking-card, .footer-rights,
+.chatbot-fab, .chatbot-window, .chinese-watermark {
+    font-family: 'NP Chinese New Year', 'Sriracha', cursive !important;
+}
+
+/* ========================================== */
+/* PRELOADER & CURSOR */
+/* ========================================== */
+#preloader { position: fixed; inset: 0; z-index: 99999; display: flex; flex-direction: column; justify-content: center; align-items: center; background: #020202; }
+.shutter { position: absolute; width: 100%; height: 50vh; background: #050505; z-index: 1; }
+#shutter-top { top: 0; }
+#shutter-bottom { bottom: 0; }
+#loader-content { position: relative; z-index: 10; text-align: center; }
+.progress-number { font-size: 20vw; font-family: 'Cinzel', serif; line-height: 1; -webkit-text-stroke: 1px rgba(217, 119, 6, 0.2); color: transparent; position: relative; }
+@media(min-width: 768px){ .progress-number { font-size: 12vw; } }
+.progress-fill { position: absolute; inset: 0; color: #d97706; -webkit-text-stroke: 0px; clip-path: inset(100% 0 0 0); transition: clip-path 0.1s linear; }
+
+.cursor-dot { position: fixed; top: 0; left: 0; width: 6px; height: 6px; background: #d97706; border-radius: 50%; pointer-events: none; z-index: 100000; transform: translate(-50%, -50%); transition: opacity 0.2s; }
+.cursor-ring { position: fixed; top: 0; left: 0; width: 40px; height: 40px; border: 1px solid rgba(217,119,6,0.6); border-radius: 50%; pointer-events: none; z-index: 99999; transform: translate(-50%, -50%); transition: width 0.3s, height 0.3s, background 0.3s, border 0.3s; display: flex; justify-content: center; align-items: center; color: transparent; font-size: 9px; font-weight: bold; letter-spacing: 2px; }
+
+/* ========================================== */
+/* EFFECTS & PANELS */
+/* ========================================== */
+.sunlight-rays {
+    position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background: radial-gradient(circle at 50% 30%, rgba(255, 230, 150, 0.25) 0%, transparent 60%);
+    animation: sunPulse 8s ease-in-out infinite alternate;
+    mix-blend-mode: screen;
+}
+@keyframes sunPulse { 0% { opacity: 0.3; transform: scale(1); } 100% { opacity: 1; transform: scale(1.1); } }
+
+.fog-container { position: absolute; inset: 0; overflow: hidden; z-index: 2; pointer-events: none; mix-blend-mode: screen; opacity: 0.5; }
+.fog-img-1 { position: absolute; height: 100vh; width: 300vw; opacity: 0.6; background: url('https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog1.png') repeat-x; background-size: cover; animation: fogMove 60s linear infinite; }
+.fog-img-2 { position: absolute; height: 100vh; width: 300vw; opacity: 0.3; background: url('https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog2.png') repeat-x; background-size: cover; animation: fogMove 40s linear infinite reverse; }
+
+.card-fog { background: url('https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog1.png') repeat-x; background-size: 200% 100%; animation: cardFogMove 30s linear infinite; }
+
+@keyframes fogMove { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-200vw, 0, 0); } }
+@keyframes cardFogMove { 0% { background-position: 0% 0; } 100% { background-position: -200% 0; } }
+
+.ken-burns {
+    transform-origin: center center;
+    animation: kenBurnsEffect 20s ease-in-out infinite alternate;
+}
+@keyframes kenBurnsEffect {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.15); }
+}
+
+.mask-wrap { display: inline-block; overflow: hidden; vertical-align: bottom; padding: 0.3em 0; margin: -0.3em 0; }
+.slide-txt { display: inline-block; transform: translateY(120%); }
+.img-mask-wrapper { overflow: hidden; position: relative; clip-path: inset(100% 0 0 0); background-color: #050505; }
+.parallax-img { width: 100%; height: 130%; object-fit: cover; transform: translateY(-15%); }
+.text-outline { color: transparent; -webkit-text-stroke: 1.5px rgba(255,255,255,0.4); }
+.glass-panel { background: rgba(5, 5, 5, 0.7); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(255,255,255,0.08); }
+.dark-map { filter: grayscale(1) invert(1) contrast(1.2); }
+
+/* ========================================== */
+/* NAVBAR RULES & SIGN IN LINK */
+/* ========================================== */
+.glass-nav {
+    background: transparent;
+    border-bottom: 1px solid transparent;
+}
+.glass-nav.scrolled {
+    background: rgba(0, 0, 0, 0.6); 
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.nav-item:not(.nav-signin) .nav-text::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -6px;
+    left: 50%;
+    background-color: #d97706; 
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+    box-shadow: 0 0 8px rgba(217, 119, 6, 0.8); 
+    border-radius: 2px;
+}
+
+.nav-item:not(.nav-signin):hover .nav-text::after,
+.nav-item:not(.nav-signin).active .nav-text::after {
+    width: 100%;
+}
+
+.nav-item:not(.nav-signin):hover .nav-text,
+.nav-item:not(.nav-signin).active .nav-text {
+    color: #f59e0b; 
+}
+
+.nav-icon {
+    transition: all 0.3s ease;
+}
+
+/* [ใหม่] CSS เฉพาะสำหรับลิ้งค์เข้าสู่ระบบ */
+.signin-link {
+    text-decoration: none !important; /* บังคับเอาเส้นขีดออก */
+    font-size: 15px;
+}
+
+/* ========================================== */
+/* GLOBAL GRADIENT BUTTONS */
+/* ========================================== */
+.btn-gradient-glow {
+    background: linear-gradient(135deg, #f59e0b, #ea580c) !important;
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.4), inset 0 0 5px rgba(255, 255, 255, 0.2) !important;
+    border: 1px solid rgba(245, 158, 11, 0.4) !important;
+    color: white !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative;
+    overflow: hidden;
+}
+.btn-gradient-glow:hover {
+    transform: translateY(-4px) scale(1.02) !important;
+    box-shadow: 0 0 25px rgba(245, 158, 11, 0.7), inset 0 0 10px rgba(255, 255, 255, 0.4) !important;
+    background: linear-gradient(135deg, #fbbf24, #f97316) !important;
+    border: 1px solid rgba(245, 158, 11, 0.6) !important;
+}

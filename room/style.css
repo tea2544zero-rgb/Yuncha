@@ -1,0 +1,291 @@
+/* ========================================== */
+/* FONTS & BASE */
+/* ========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+@font-face {
+    font-family: 'NP Chinese New Year';
+    src: url('../css/fonts/NP-Chinese-New-Year.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    background-color: #020202;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    background-image: url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.035"/%3E%3C/svg%3E');
+    mix-blend-mode: overlay;
+}
+
+::-webkit-scrollbar { display: none; }
+
+.font-cinzel { font-family: 'NP Chinese New Year', 'Sriracha', cursive !important; }
+.font-serif-thai { font-family: 'NP Chinese New Year', 'Sriracha', cursive !important; }
+.font-prompt { font-family: 'NP Chinese New Year', 'Sriracha', cursive !important; }
+.font-cn { font-family: 'NP Chinese New Year', 'Sriracha', cursive !important; }
+
+/* ========================================== */
+/* BILINGUAL TYPOGRAPHY SYSTEM (REFINED)      */
+/* ========================================== */
+
+/* 1. Global Base Fonts */
+body {
+    font-family: 'NP Chinese New Year', 'Sriracha', cursive;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a, div, li, th, td, 
+.luxury-title, .literary-content, blockquote,
+nav, .nav-item, .nav-text,
+input, button, select, textarea, label,
+.price, .date, .rating, .badge, .meta-info,
+.btn, .booking-card, .footer-rights,
+.chatbot-fab, .chatbot-window, .chinese-watermark {
+    font-family: 'NP Chinese New Year', 'Sriracha', cursive !important;
+}
+
+/* ========================================== */
+/* DYNAMIC THEME SYSTEM (Mood & Colors) */
+/* ========================================== */
+
+/* Theme 1: Tea Valley (Warm Amber & Fog) */
+.theme-tea {
+    --primary-color: #d97706; /* amber-600 */
+    --glow-color: rgba(217, 119, 6, 0.4);
+    --bg-overlay: radial-gradient(circle at top, rgba(217,119,6,0.08), transparent 40%);
+}
+
+/* Theme 2: Lake Pavilion (Deep Red & Lantern) */
+.theme-lake {
+    --primary-color: #dc2626; /* red-600 */
+    --glow-color: rgba(220, 38, 38, 0.4);
+    --bg-overlay: radial-gradient(circle at top, rgba(220,38,38,0.08), transparent 40%);
+}
+
+/* Theme 3: Peak Residence (Gold & Matte Black) */
+.theme-peak {
+    --primary-color: #ca8a04; /* yellow-600/gold */
+    --glow-color: rgba(202, 138, 4, 0.4);
+    --bg-overlay: radial-gradient(circle at top, rgba(202,138,4,0.05), transparent 50%);
+}
+
+/* Theme Application Classes */
+.ambient-bg {
+    background: var(--bg-overlay);
+}
+.theme-text-glow {
+    color: var(--primary-color);
+    text-shadow: 0 0 20px var(--glow-color);
+}
+.theme-border-glow {
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: box-shadow 0.4s ease, border-color 0.4s ease;
+}
+.theme-border-glow:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 30px var(--glow-color);
+}
+.theme-border-always {
+    border: 1px solid var(--primary-color) !important;
+    box-shadow: 0 0 15px var(--glow-color) !important;
+}
+.theme-btn-glow:hover {
+    box-shadow: 0 0 30px var(--glow-color);
+}
+.theme-hover-glow:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 5px 20px var(--glow-color);
+}
+
+/* ========================================== */
+/* GLASSMORPHISM & LUXURY UI */
+/* ========================================== */
+.glassmorphism, .glass-panel {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.glass-nav {
+    background: transparent;
+    border-bottom: 1px solid transparent;
+}
+.glass-nav.scrolled {
+    background: rgba(0, 0, 0, 0.85); 
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-item:not(.nav-signin) .nav-text::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -6px;
+    left: 50%;
+    background-color: #d97706; 
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+    box-shadow: 0 0 8px rgba(217, 119, 6, 0.8); 
+    border-radius: 2px;
+}
+
+.nav-item:not(.nav-signin):hover .nav-text::after,
+.nav-item:not(.nav-signin).active .nav-text::after {
+    width: 100%;
+}
+
+.nav-item:not(.nav-signin):hover .nav-text,
+.nav-item:not(.nav-signin).active .nav-text {
+    color: #f59e0b; 
+}
+
+.nav-icon {
+    transition: all 0.3s ease;
+}
+
+/* Room Selector Active Tab */
+.active-tab {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 0 20px var(--glow-color);
+}
+
+/* ========================================== */
+/* TEXT REVEAL & CLIPPING MASKS */
+/* ========================================== */
+.hero-text-reveal {
+    transform: translateY(100%);
+    opacity: 0;
+}
+.clip-reveal {
+    clip-path: inset(0 0 0 100%);
+}
+.fade-up-anim {
+    transform: translateY(30px);
+}
+
+/* ========================================== */
+/* LUXURY DETAILS: FOG, PARTICLES, GOLD GRAIN */
+/* ========================================== */
+
+/* Gold Grain Texture */
+.gold-grain-overlay {
+    background-image: url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.03"/%3E%3C/svg%3E');
+    mix-blend-mode: overlay;
+}
+
+/* Cinematic Fog Animation */
+.cinematic-fog {
+    background: url('https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog1.png') repeat-x;
+    background-size: 200% 100%;
+    opacity: 0.08;
+    animation: fogDrift 40s linear infinite;
+    mix-blend-mode: screen;
+}
+@keyframes fogDrift { 0% { background-position: 0% 0; } 100% { background-position: -200% 0; } }
+
+/* ========================================== */
+/* INFINITE MARQUEE (REVIEWS) */
+/* ========================================== */
+.marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marqueeSlide 120s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+@keyframes marqueeSlide {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
+}
+
+/* ========================================== */
+/* CUSTOM CURSOR */
+/* ========================================== */
+.cursor-dot { position: fixed; top: 0; left: 0; width: 5px; height: 5px; background: #fff; border-radius: 50%; pointer-events: none; z-index: 100000; transform: translate(-50%, -50%); mix-blend-mode: difference; }
+.cursor-ring { position: fixed; top: 0; left: 0; width: 35px; height: 35px; border: 1px solid rgba(255,255,255,0.4); border-radius: 50%; pointer-events: none; z-index: 99999; transform: translate(-50%, -50%); transition: width 0.3s, height 0.3s, background 0.3s; mix-blend-mode: difference; }
+@media (any-pointer: fine) {
+    body { cursor: none; }
+}
+@media not all and (any-pointer: fine) {
+    .cursor-dot, .cursor-ring { display: none !important; }
+}
+
+/* ========================================== */
+/* MODERN CHINESE & 3D SCROLLING REDESIGN */
+/* ========================================== */
+
+/* Typography */
+.vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    letter-spacing: 0.2em;
+}
+.watermark-cn {
+    position: absolute;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 25vw;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.03);
+    z-index: 0;
+    pointer-events: none;
+    white-space: nowrap;
+    user-select: none;
+}
+
+/* 3D Scene Setup */
+.scene-3d {
+    perspective: 2000px;
+    transform-style: preserve-3d;
+}
+
+/* Deep Zoom Overlay */
+.hero-overlay-dark {
+    position: absolute;
+    inset: 0;
+    background: #000;
+    opacity: 0; /* Changed by GSAP */
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Horizontal Scroll Container */
+.horizontal-scroll-container {
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+}
+
+/* ========================================== */
+/* GLOBAL GRADIENT BUTTONS */
+/* ========================================== */
+.btn-gradient-glow {
+    background: linear-gradient(135deg, #f59e0b, #ea580c) !important;
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.4), inset 0 0 5px rgba(255, 255, 255, 0.2) !important;
+    border: 1px solid rgba(245, 158, 11, 0.4) !important;
+    color: white !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative;
+    overflow: hidden;
+}
+.btn-gradient-glow:hover {
+    transform: translateY(-4px) scale(1.02) !important;
+    box-shadow: 0 0 25px rgba(245, 158, 11, 0.7), inset 0 0 10px rgba(255, 255, 255, 0.4) !important;
+    background: linear-gradient(135deg, #fbbf24, #f97316) !important;
+    border: 1px solid rgba(245, 158, 11, 0.6) !important;
+}
