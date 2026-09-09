@@ -121,21 +121,6 @@
 
 ---
 
-## 📋 สรุปสิ่งที่ต้องมีในการนำเสนอ (Presentation Checklist & Slide Structure)
-
-หากนำเสนองานต่ออาจารย์/คณะกรรมการ/ผู้บริหาร แนะนำให้แบ่งสไลด์ออกเป็น 10 ส่วนดังนี้:
-
-1. **Slide 1: Title & Cover** - ชื่อโครงการ "Yuncha Valley Resort Booking System" และผู้จัดทำ
-2. **Slide 2: Background & Problem** - ปัญหาของการจองห้องพักแบบเดิม (รับจองทางไลน์/กระดาษ สับสนสถานะห้อง สลิปปลอม ตอบลูกค้าช้า)
-3. **Slide 3: Project Goals** - เป้าหมายระบบ (จองง่าย 24 ชม., มี AI ช่วยตอบ, หลังบ้านจัดการห้องและรายรับ-รายจ่ายได้ครบวงจร)
-4. **Slide 4: Key Features (Guest Portal)** - ฟีเจอร์หน้าบ้าน (ค้นหาห้อง, เช็คราคาตามซีซัน, จอง, อัปโหลดสลิป, AI Chatbot 2 ภาษา)
-5. **Slide 5: Key Features (Staff Dashboard)** - ฟีเจอร์หลังบ้าน (Wallboard สถานะห้อง, เช็คอิน/เอาท์, บันทึกการเงิน, อนุมัติรีวิว)
-6. **Slide 6: System Architecture & Tech Stack** - สถาปัตยกรรมระบบ (PHP Component-Based + SQLite + Gemini AI API + Tailwind CSS)
-7. **Slide 7: Database & Diagrams** - แสดง ER Diagram และ Use Case Diagram (ดูรายละเอียดด้านล่าง)
-8. **Slide 8: AI Feature Highlight** - สาธิตการทำงานของ Yuncha AI Assistant ที่ดึงข้อมูลจาก DB มาตอบ
-9. **Slide 9: Live Demo** - เดินเรื่องสาธิตการจองจริง ตั้งแต่ลูกค้าจอง -> พนักงานเช็คอินหลังบ้าน -> ออกใบเสร็จ
-10. **Slide 10: Conclusion & Q&A** - สรุปประโยชน์ที่รีสอร์ทได้รับ และเปิดโอกาสให้ซักถาม
-
 ---
 
 ## 📐 Diagrams & Database Architecture (แผนภาพและโครงสร้างฐานข้อมูล)
