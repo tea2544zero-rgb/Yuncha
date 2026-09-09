@@ -103,6 +103,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
 
             $conn->commit();
+
+            // =====================================
+            // อัปเดตไฟล์ static index.html (สำหรับ GitHub Pages หากมี)
+            // =====================================
+            $index_html_path = dirname(dirname(__DIR__)) . '/index.html';
+            if (file_exists($index_html_path)) {
+                try {
+                    chdir(dirname(dirname(__DIR__)));
+                    $_SERVER['HTTP_HOST'] = 'localhost';
+                    $_SERVER['REQUEST_URI'] = '/';
+                    $_SERVER['SERVER_NAME'] = 'localhost';
+                    $_SERVER['REMOTE_ADDR'] = '127.0.0.1';
+                    ob_start();
+                    include 'index.php';
+                    $new_html = ob_get_clean();
+                    if (!empty($new_html)) {
+                        file_put_contents($index_html_path, $new_html);
+                    }
+                } catch (Exception $e) {}
+            }
+
             header("Location: ../rooms.php?msg=bulk_updated");
             exit;
         } catch (Exception $e) {
